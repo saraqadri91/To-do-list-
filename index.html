@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="shortcut icon" href="images/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="container">
+        <div class="head">
+            <h2>To-Do List <i class="fas fa-clipboard-list"></i></h2>
+        </div>
+        <div class="input-container">
+            <input type="text" placeholder="Add a new task..." id="task-input">
+            <button id="add-task-btn" onclick="addTask()"><i class="fas fa-plus"></i></button>
+        </div>
+        <div class="task-stats">
+            <p>Total Tasks: <span id="total-tasks">0</span></p>
+            <p>Completed: <span id="completed-tasks">0</span></p>
+        </div>
+        <ul id="list-container"></ul>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="app.js"></script>
+</body>
+</html>

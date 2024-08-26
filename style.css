@@ -1,0 +1,262 @@
+@font-face {
+    font-family: myfont;
+    src: url(font/EduVICWANTBeginner-VariableFont_wght.ttf);
+}
+body {
+    background: linear-gradient(135deg, #2e2e2e, #1b1b1b);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #fff;
+    overflow: hidden;
+    font-family: myfont;
+}
+
+.container {
+    background-color: #333;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    max-width: 500px;
+    padding: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    border: 2px solid;
+    border-image: linear-gradient(45deg, #42f5e6, #f542f5) 1;
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.head {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-family: myfont;
+    font-size: 28px;
+    color: #fff;
+}
+
+h2 i {
+    margin-left: 10px;
+    color: #42f5e6;
+}
+
+.input-container {
+    display: flex;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+#task-input {
+    width: 75%;
+    padding: 10px;
+    border: 1px solid #555;
+    border-radius: 5px 0 0 5px;
+    font-size: 16px;
+    outline: none;
+    background-color: #444;
+    color: #fff;
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+#task-input:focus {
+    border-color: #42f5e6;
+    box-shadow: 0px 0px 10px rgba(66, 245, 230, 0.7);
+}
+
+#add-task-btn {
+    width: 25%;
+    background-color: #42f5e6;
+    border: none;
+    color: white;
+    font-size: 18px;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#add-task-btn:hover {
+    background-color: #2ec6b5;
+}
+
+.task-stats {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.task-stats p {
+    margin: 0;
+    font-size: 14px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+ul li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #444;
+    border: 1px solid #555;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 16px;
+    color: #fff;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    position: relative;
+}
+
+ul li:hover {
+    background-color: #555;
+    transform: translateX(5px);
+}
+
+ul li::before {
+    content: attr(data-date);
+    position: absolute;
+    left: 10px;
+    top: -20px;
+    font-size: 10px;
+    color: #aaa;
+}
+
+.task-checkbox {
+    margin-right: 12px;
+    width: 18px;
+    height: 18px;
+    appearance: none;
+    border: 2px solid #aaa;
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    background-color: #444;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.task-checkbox:checked {
+    background-color: #42f5e6;
+    border-color: #42f5e6;
+}
+
+.task-checkbox:checked::before {
+    content: ' ';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.task-text {
+    flex-grow: 1;
+    margin-left: 10px;
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.completed {
+    color: #bbb;
+    text-decoration: line-through;
+}
+
+.task-icons {
+    display: flex;
+    align-items: center;
+}
+
+.task-icon {
+    font-size: 16px;
+    margin-left: 12px;
+    color: #bbb;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.task-icon:hover {
+    color: #fff;
+}
+
+.edit-icon {
+    color: #9841d1;
+}
+
+.delete-icon {
+    color: #9841d1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        width: 80%;
+        padding: 15px;
+    }
+
+    #task-input {
+        width: 70%;
+    }
+
+    #add-task-btn {
+        width: 30%;
+    }
+
+    .task-stats p {
+        font-size: 12px;
+    }
+
+    ul li {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 95%;
+        padding: 10px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    #task-input {
+        width: 65%;
+    }
+
+    #add-task-btn {
+        width: 35%;
+    }
+
+    .task-stats p {
+        font-size: 10px;
+    }
+
+    ul li {
+        font-size: 12px;
+        padding: 8px;
+    }
+}
+
